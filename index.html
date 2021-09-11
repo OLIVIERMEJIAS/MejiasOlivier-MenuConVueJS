@@ -11,27 +11,24 @@
 </head>
 <body>
     <main>
-        <div id="paginas" class="paginas">
-            <div v-if="mostrar" id="pagina1" class="pagina1">
-                <h1 class="pagina1__heading" v-text="nombre"></h1>
-                <p class="pagina1__paragraph" v-text="parrafo"></p>
-                <button class="pagina1__btnMsj" @click="mensajes" type="button">{{mensaje}}</button>
-                <button class="pagina1__flecha" type="button" @click="primerCambioPagina"><img class="pagina1__flecha" src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></img></button>'
-            </div>
-
-            <div v-if="!mostrar" id="paginaAjustable" class="paginaAjustable">
-                <h1 class="paginaAjustable__tituloMenu">Menú</h1>
-                <img v-for="(item,i) in 6" v-bind:src="/imagenes/url${i}.jpg" class="paginaAjustable__item${i}">
-                <img class="paginaAjustable__itemGrande" v-bind:src="/imagenes/url${i}.jpeg">
-                <h2 class="paginaAjustable__tituloPlatillo">{{nombres[i]}}</h2>
-                <p class="paginaAjustable__descripcion">{{descripciones[i]}}</p>
-                <div class="direccion">
-                    <button @click="cargarPagina('izquierda')" type="button"><img class="direccion__flecha" src="/imagenes/2024662_arrow_arrows_direction_left_icon.png"></button>
-                    <button @click="cargarPagina('derecha')" type="button"><img v-bind:{{bloquear}} class="direccion__flecha" src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></button>
-                </div>
-            </div>            
+        <div v-if="mostrar" id="pagina1" class="pagina1">
+            <h1 class="pagina1__heading" v-text="nombre"></h1>
+            <p class="pagina1__paragraph" v-text="parrafo"></p>
+            <button class="pagina1__btnMsj" v-on:click="mensaj" type="button">{{mensaje}}</button>
+            <button class="pagina1__flecha" type="button" v-on:click="primerCambioPagina"><img class="pagina1__flecha" src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></img></button>'
         </div>
-        
+
+        <div v-if="!mostrar" id="paginaAjustable" class="paginaAjustable">
+            <h1 class="paginaAjustable__tituloMenu">Menú</h1>
+            <img v-for="(item,i) in 6" src="/imagenes/.jpg" class="paginaAjustable__item$index">
+            <img class="paginaAjustable__itemGrande" src="/imagenes/comida$index.jpeg">
+            <h2 v-for="(item,i) in 6" class="paginaAjustable__tituloPlatillo">{{nombres[i]}}</h2>
+            <p v-for="(item,i) in 6" class="paginaAjustable__descripcion">{{descripciones[i]}}</p>
+            <div class="direccion">
+                <button class="direccion__flecha" @click="cargarPagina('izquierda')" type="button"><img src="/imagenes/2024662_arrow_arrows_direction_left_icon.png"></button>
+                <button class="direccion__flecha" @click="cargarPagina('derecha')" type="button"><img src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></button>
+            </div>
+        </div>        
     </main>
 </body>
 </html>

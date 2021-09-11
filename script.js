@@ -4,7 +4,6 @@ const pag = {
         mostrar: true,
         nombre: "Sabor Gourmet",
         parrafo: "Lorem ipsum dolor sit...",
-        clicks: 0,
         cont: 0,
         mensaje: "Ver más...",
         
@@ -12,15 +11,14 @@ const pag = {
     }
     },
     methods: {
-        mensajes(){
-            clicks++;
-            if (clicks===1){
+        mensaj(){
+            if (this.mensaje==="Ver más..."){
                 mensaje="Ver menos...";
                 parrafo= "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt ullam ducimus magnam consequuntur blanditiis sint quibusdam ipsa. Quia saepe sunt vitae. Inventore quibusdam impedit placeat consequuntur rerum repellendus sed mollitia laudantium sequi, quaerat fugit, nemo ducimus, consectetur distinctio officiis ullam quidem id quae. Repellat repellendus labore amet sequi est reprehenderit quia, vel cupiditate nemo atque possimus maxime, blanditiis obcaecati eaque!";
-            }else if (click===2){
+            }else{
                 mensaje="Ver más...";
                 parrafo="Lorem ipsum dolor, sit...";
-                clicks=0;
+
             }
         },
 
@@ -30,17 +28,16 @@ const pag = {
 
     }
   }
-  let app1= Vue.createApp(pag).mount('#pagina1');
+  Vue.createApp(pag).mount('#pagina1');
   
 
 
 const paginaAjust = {
     data() {
       return {
-        url:"",
-        bloquear:"abled",
         nombres:"",
         descripciones:"",
+        comida:['comida1.jpeg','comida2.jpeg','comida3.jpeg','comida4.jpeg','comida5.jpeg','comida6.jpeg'],
         nombres1:['Empanada Arreglada','Chalupa','Pelota','Quesadilla','Hamburguesa','Nacho'],
         descripciones1:['Deliciosa empanada con carne mechada arreglada con repollo y salsas','Deliciosa chalupa con frijoles, carne, queso amarillo y chimichurrí','Deliciosa mezcla de carne mechada, queso mozarella en pan de hamburguesa','Deliciosa quesadilla con carne, queso mozarella y queso amarillo','Deliciosa hamburguesa especial de la casa con los más frescos ingedientes','Delicioso nacho con carne mechada, queso mozarella, salsa de queso, lechuga, chimichurrí y salsas'],
         nombres2:['Papaya en Leche','Rompopé','Tamarindo','Banano y Fresa','Agua de Sapo','Piña con Arroz'],
@@ -53,7 +50,7 @@ const paginaAjust = {
     methods: {
         cargarPagina(direccion){
             if (cont === 1){
-                url:"comida";
+                url="comida";
                 nombres=nombres1;
                 descripciones=descripcion1;
                 if (direccion==='derecha'){
@@ -63,7 +60,7 @@ const paginaAjust = {
                     mostrar= true;
                 }
             }else if (cont === 2){
-                url:"refresco";
+                url="refresco";
                 nombres=nombres2;
                 descripciones=descripcion2;
                 if (direccion==='derecha'){
@@ -72,7 +69,7 @@ const paginaAjust = {
                    cont--;
                }
             }else if (cont === 3){
-                url:"postre";
+                url="postre";
                 nombres=nombres3;
                 descripciones=descripcion3;
                 if (direccion==='derecha'){
@@ -80,14 +77,6 @@ const paginaAjust = {
                }else{
                    cont--;
                }
-            }
-        },
-
-        bloquear(){
-            if(cont===3){
-                bloquear:"disabled";
-            }else{
-                bloquear:"enabled";
             }
         }
 
@@ -97,6 +86,6 @@ const paginaAjust = {
 }
   
   
-let ajustable= Vue.createApp(paginaAjust).mount('#paginaAjustable');
+Vue.createApp(paginaAjust).mount('#paginaAjustable');
 
 
