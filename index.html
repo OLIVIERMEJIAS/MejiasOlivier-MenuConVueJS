@@ -12,7 +12,7 @@
 <body>
     <main>
         <div id="menu"> 
-            <div v-if="portada" id="pagina1" class="pagina1">
+            <div v-if="portada" id="pagina1" class="portada">
                 <h1 class="portada__cabeza" v-text="nombre"></h1>
                 <p class="portada__parrafo" v-text="parrafo"></p>
                 <button class="btnMsj" v-on:click="cambioMsj" type="button">{{msj}}</button>
@@ -39,9 +39,9 @@
                      </div>
                     
                     <div>
-                        <img src="" class="paginaMenu_itemGrande">  
-                        <h2 class="paginaMenu__nombrePlatillo"></h2>  
-                        <p class="paginaMenu__descripcion"></p>
+                        <img id="paginaMenu__itemGrande" class="paginaMenu__itemGrande">  
+                        <h2 class="paginaMenu__nombrePlatillo">{{nom}}</h2>  
+                        <p class="paginaMenu__descripcion">{{descripcion}}</p>
                     </div>
                 </div>
                 <div class="flechas">
@@ -68,10 +68,10 @@
                         </div>
                      </div>
                     
-                    <div>
-                        <img src="" class="paginaMenu_itemGrande">  
-                        <h2 class="paginaMenu__nombrePlatillo"></h2>  
-                        <p class="paginaMenu__descripcion"></p>
+                     <div>
+                        <img class="paginaMenu__itemGrande" id="paginaMenu__itemGrande">  
+                        <h2 class="paginaMenu__nombrePlatillo">{{nom}}</h2>  
+                        <p class="paginaMenu__descripcion">{{descripcion}}</p>
                     </div>
                 </div>
                 <div class="flechas">
@@ -98,10 +98,10 @@
                         </div>
                      </div>
                     
-                    <div>
-                        <img src="" class="paginaMenu_itemGrande">  
-                        <h2 class="paginaMenu__nombrePlatillo"></h2>  
-                        <p class="paginaMenu__descripcion"></p>
+                     <div>
+                        <img class="paginaMenu__itemGrande" id="paginaMenu__itemGrande">  
+                        <h2 class="paginaMenu__nombrePlatillo">{{nom}}</h2>  
+                        <p class="paginaMenu__descripcion">{{descripcion}}</p>
                     </div>
                 </div>
                 <div class="flechas">

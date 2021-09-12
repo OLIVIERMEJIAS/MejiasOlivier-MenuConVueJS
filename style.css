@@ -30,6 +30,7 @@ main{
 
 .contenedor{
     display: flex;
+    
 }
 .imgsGroup{
     display: flex;
@@ -41,6 +42,7 @@ main{
 }
 .imgs{
     margin: 0 7px;
+    border-right: 7px solid blue;
 }
 .imgsGroup__item{
     width:100px;
