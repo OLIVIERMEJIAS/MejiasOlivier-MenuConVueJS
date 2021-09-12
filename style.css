@@ -2,11 +2,13 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 main{
-    width: 70vw;
-    height: 70vh;
+    width: 90%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,57 +20,53 @@ main{
     
 }
 
-.pagina1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.paginaMenu{
+    
     border: 7px solid blue;
+    width: 80vw;
+    height: 80vh;
    
 }
 
-.pagina1__heading, .pagina1__heading{
-    text-align: center;
+.contenedor{
+    display: flex;
+}
+.imgsGroup{
+    display: flex;
 }
 
-.paginaAjustable{
-    display: grid;
-    grid-template-areas: 'paginaAjustable__tituloMenu paginaAjustable__tituloMenu paginaAjustable__itemGrande paginaAjustable__itemGrande'
-    'paginaAjustable__item1 paginaAjustable__item2 pagunaAjustable__tituloMenu paginaAjustable__itemGrande paginaAjustable__itemGrande'
-    'paginaAjustable__item3 paginaAjustable__item4 paginaAjustable__tituloPlatillo paginaAjustable__tituloPlatillo'
-    'paginaAjustable__item5 paginaAjustable__item6 paginaAjustable__descripcion paginaAjustable__descripcion'
-    '..direccion.';
+.flechas{
+    margin: auto;
+    width:fit-content;
+}
+.imgs{
+    margin: 0 7px;
+}
+.imgsGroup__item{
+    width:100px;
+    margin: 5px;
 }
 
-.paginaAjustable__tituloMenu{grid-area: pagunaAjustable__tituloMenu;} 
-.paginaAjustable__itemGrande{grid-area: paginaAjustable__itemGrande;} 
-.paginaAjustable__item1{grid-area: paginaAjustable__item1;} 
-.paginaAjustable__item2{grid-area: paginaAjustable__item2;} 
-.paginaAjustable__item3{grid-area: paginaAjustable__item3;} 
-.paginaAjustable__item4{grid-area: paginaAjustable__item4;}
-.paginaAjustable__item5{grid-area: paginaAjustable__item5;} 
-.paginaAjustable__item6{grid-area: paginaAjustable__item6;} 
-.paginaAjustable__tituloPlatillo{grid-area: paginaAjustable__tituloPlatillo;}
-.paginaAjustable__descripcion{grid-area: paginaAjustable__descripcion;}
-.direccion{
-    grid-area: direccion;
+
+.portada__cabeza,.portada__parrafo{
+    margin: auto;
 }
-.pagina1__flecha{
+
+.btnMsj{
+    margin: auto;
+}
+.flecha{
     display: block;
-    
+    margin: 30px auto;
 }
-
-.pagina1__btnMsj{
-    margin: 10px;
-}
-
-.direccion__flecha,.pagina1__flecha{
+.flechaI,.flechaD,.flecha{
     border:0;
     background-color: black;
     border-radius: 12px;
+    margin: auto;
 }
 
-.direccion__flecha:active,.pagina1__flecha:active{
+.flechaI:active,.flechaD:active.lecha:active{
     background-color: aqua;
     border-radius: 12px;
 }

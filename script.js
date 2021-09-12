@@ -1,40 +1,14 @@
 const pag = {
     data() {
       return {
-        mostrar: true,
+        portada: true,
+        pagina1: false,
+        pagina2: false,
+        pagina3: false,
         nombre: "Sabor Gourmet",
         parrafo: "Lorem ipsum dolor sit...",
         cont: 0,
-        mensaje: "Ver más...",
-        
-        
-    }
-    },
-    methods: {
-        mensaj(){
-            if (this.mensaje==="Ver más..."){
-                mensaje="Ver menos...";
-                parrafo= "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt ullam ducimus magnam consequuntur blanditiis sint quibusdam ipsa. Quia saepe sunt vitae. Inventore quibusdam impedit placeat consequuntur rerum repellendus sed mollitia laudantium sequi, quaerat fugit, nemo ducimus, consectetur distinctio officiis ullam quidem id quae. Repellat repellendus labore amet sequi est reprehenderit quia, vel cupiditate nemo atque possimus maxime, blanditiis obcaecati eaque!";
-            }else{
-                mensaje="Ver más...";
-                parrafo="Lorem ipsum dolor, sit...";
-
-            }
-        },
-
-        primerCambioPagina(){
-            mostrar=false;
-        }
-
-    }
-  }
-  Vue.createApp(pag).mount('#pagina1');
-  
-
-
-const paginaAjust = {
-    data() {
-      return {
+        msj: "Ver más...",
         nombres:"",
         descripciones:"",
         comida:['comida1.jpeg','comida2.jpeg','comida3.jpeg','comida4.jpeg','comida5.jpeg','comida6.jpeg'],
@@ -45,47 +19,68 @@ const paginaAjust = {
         nombres3:['Torta Chilena','Cupcakes de Vainilla','Pastel de Vainilla','Arroz con Leche','Tamal de Maicena','Empanadas de Chiverré'],
         descripciones3:['Torta chilena con la receta original, rellena de dulce de leche','Esponjosos cupcakes de vainilla, decorador con crema chantilli','Pastel de vainilla con relleno de crema de mantequilla y lustre de limón','Receta de la casa, con especias aromáticas y los mejores ingredientes, para esa textura que tanto gusta','Exquisito tamal de maicena, con leche o leche agría a su gusto, coco al gusto','Emapanad de chiverré hecho en casa, receta tradicional']
         
-      }
+        
+        
+    }
     },
     methods: {
-        cargarPagina(direccion){
-            if (cont === 1){
-                url="comida";
-                nombres=nombres1;
-                descripciones=descripcion1;
-                if (direccion==='derecha'){
-                     cont++;
-                }else{
-                    cont--;
-                    mostrar= true;
-                }
-            }else if (cont === 2){
-                url="refresco";
-                nombres=nombres2;
-                descripciones=descripcion2;
-                if (direccion==='derecha'){
-                    cont++;
-               }else{
-                   cont--;
-               }
-            }else if (cont === 3){
-                url="postre";
-                nombres=nombres3;
-                descripciones=descripcion3;
-                if (direccion==='derecha'){
-                    cont++;
-               }else{
-                   cont--;
-               }
+        cambioMsj(){
+            if (this.msj==="Ver más..."){
+                this.msj="Ver menos...";
+                this.parrafo= "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt ullam ducimus magnam consequuntur blanditiis sint quibusdam ipsa. Quia saepe sunt vitae. Inventore quibusdam impedit placeat consequuntur rerum repellendus sed mollitia laudantium sequi, quaerat fugit, nemo ducimus, consectetur distinctio officiis ullam quidem id quae. Repellat repellendus labore amet sequi est reprehenderit quia, vel cupiditate nemo atque possimus maxime, blanditiis obcaecati eaque!";
+            }else{
+                this.msj="Ver más...";
+                this.parrafo="Lorem ipsum dolor, sit...";
+
+            }
+        },
+
+        primerCambioPagina(){
+            this.portada=false;
+            this.pagina1= true;
+        },
+
+        cambioIzq(pagina){
+            switch(pagina){
+                case 1:
+                    this.pagina1=false;
+                    this.portada=true;
+                    break;
+                case 2:
+                    this.pagina2=false;
+                    this.pagina1=true;
+                    break;
+                case 3:
+                    this.pagina3=false;
+                    this.pagina2=true;
+                    break;
+            }
+        },
+
+        cambioDer(pagina){
+            switch(pagina){
+                case 1:
+                    this.pagina1=false;
+                    this.pagina2=true;
+                    break;
+                case 2:
+                    this.pagina2=false;
+                    this.pagina3=true;
+                    break;
+                case 3:
+                    this.pagina3=false;
+                    this.portada=true;
+                    break;
             }
         }
 
-    }
+    },
     
+  }
+  Vue.createApp(pag).mount('#menu');
+  
 
-}
-  
-  
-Vue.createApp(paginaAjust).mount('#paginaAjustable');
+
+
 
 
