@@ -22,26 +22,26 @@
             <div v-if="pagina1" class="paginaMenu">
                 <h1 class="paginaMenu__tituloMenu">Menú</h1>
                 <div class="contenedor">
-                     <div class="imgs">
+                    <div class="imgs">
                         <div class="imgsGroup">
-                            <img src="/imagenes/comida1.jpeg" class="imgsGroup__item">
-                            <img src="/imagenes/comida2.jpeg" class="imgsGroup__item"> 
+                            <button type="button" @click="click(0,1)"><img src="/imagenes/comida1.jpeg"   class="imgsGroup__item"></button>
+                            <button type="button" @click="click(1,1)"><img src="/imagenes/comida2.jpeg"   class="imgsGroup__item"></button> 
                         </div>
                         <div class="imgsGroup">
-                            <img src="/imagenes/comida3.jpeg" class="imgsGroup__item">      
-                            <img src="/imagenes/comida4.jpeg" class="imgsGroup__item"> 
+                            <button type="button" @click="click(2,1)"><img src="/imagenes/comida3.jpeg"   class="imgsGroup__item"></button>      
+                            <button type="button" @click="click(3,1)"><img src="/imagenes/comida4.jpeg"   class="imgsGroup__item"></button>
                         </div>
 
                         <div class="imgsGroup">
-                            <img src="/imagenes/comida5.jpeg" class="imgsGroup__item">      
-                            <img src="/imagenes/comida6.jpeg" class="imgsGroup__item"> 
+                            <button type="button" @click="click(4,1)"><img src="/imagenes/comida5.jpeg"  class="imgsGroup__item"></button>    
+                            <button type="button" @click="click(5,1)"><img src="/imagenes/comida6.jpeg"  class="imgsGroup__item"></button>
                         </div>
                      </div>
                     
-                    <div>
-                        <img id="paginaMenu__itemGrande" class="paginaMenu__itemGrande">  
-                        <h2 class="paginaMenu__nombrePlatillo">{{nom}}</h2>  
-                        <p class="paginaMenu__descripcion">{{descripcion}}</p>
+                    <div class="itemIndividual"> 
+                        <img id="itemIndividual__itemGrande" class="itemIndividual__itemGrande">  
+                        <h2 class="itemIndividual__nombrePlatillo">{{nom}}</h2>  
+                        <p class="itemIndividual__descripcion">{{descripcion}}</p>
                     </div>
                 </div>
                 <div class="flechas">
@@ -52,26 +52,26 @@
             <div v-if="pagina2" class="paginaMenu">
                 <h1 class="paginaMenu__tituloMenu">Menú</h1>
                 <div class="contenedor">
-                      <div class="imgs">
+                    <div class="imgs">
                         <div class="imgsGroup">
-                            <img src="/imagenes/refresco1.jpeg" class="imgsGroup__item">
-                            <img src="/imagenes/refresco2.jpeg" class="imgsGroup__item"> 
+                            <button type="button" @click="click(0,2)"><img src="/imagenes/refresco1.jpeg"   class="imgsGroup__item"></button>
+                            <button type="button" @click="click(1,2)"><img src="/imagenes/refresco2.jpeg"   class="imgsGroup__item"></button> 
                         </div>
                         <div class="imgsGroup">
-                            <img src="/imagenes/refresco3.jpeg" class="imgsGroup__item">      
-                            <img src="/imagenes/refresco4.jpeg" class="imgsGroup__item"> 
+                            <button type="button" @click="click(2,2)"><img src="/imagenes/refresco3.jpeg"   class="imgsGroup__item"></button>      
+                            <button type="button" @click="click(3,2)"><img src="/imagenes/refresco4.jpeg"   class="imgsGroup__item"></button>
                         </div>
 
                         <div class="imgsGroup">
-                            <img src="/imagenes/refresco5.jpeg" class="imgsGroup__item">      
-                            <img src="/imagenes/refresco6.jpeg" class="imgsGroup__item"> 
+                            <button type="button" @click="click(4,2)"><img src="/imagenes/refresco5.jpeg"  class="imgsGroup__item"></button>    
+                            <button type="button" @click="click(5,2)"><img src="/imagenes/refresco6.jpeg"  class="imgsGroup__item"></button>
                         </div>
                      </div>
                     
                      <div>
-                        <img class="paginaMenu__itemGrande" id="paginaMenu__itemGrande">  
-                        <h2 class="paginaMenu__nombrePlatillo">{{nom}}</h2>  
-                        <p class="paginaMenu__descripcion">{{descripcion}}</p>
+                        <img class="itemIndividual__itemGrande" id="itemIndividual__itemGrande">  
+                        <h2 class="itemIndividual__nombrePlatillo">{{nom}}</h2>  
+                        <p class="itemIndividual__descripcion">{{descripcion}}</p>
                     </div>
                 </div>
                 <div class="flechas">
@@ -82,26 +82,26 @@
             <div v-if="pagina3" class="paginaMenu">
                 <h1 class="paginaMenu__tituloMenu">Menú</h1>
                 <div class="contenedor">
-                       <div class="imgs">
+                    <div class="imgs">
                         <div class="imgsGroup">
-                            <img src="/imagenes/postre1.jpeg" class="imgsGroup__item">
-                            <img src="/imagenes/postre2.jpeg" class="imgsGroup__item"> 
+                            <button type="button" @click="click(0,3)"><img src="/imagenes/postre1.jpeg"   class="imgsGroup__item"></button>
+                            <button type="button" @click="click(1,3)"><img src="/imagenes/postre2.jpeg"   class="imgsGroup__item"></button> 
                         </div>
                         <div class="imgsGroup">
-                            <img src="/imagenes/postre3.jpeg" class="imgsGroup__item">      
-                            <img src="/imagenes/postre4.jpeg" class="imgsGroup__item"> 
+                            <button type="button" @click="click(2,3)"><img src="/imagenes/postre3.jpeg"   class="imgsGroup__item"></button>      
+                            <button type="button" @click="click(3,3)"><img src="/imagenes/postre4.jpeg"   class="imgsGroup__item"></button>
                         </div>
 
                         <div class="imgsGroup">
-                            <img src="/imagenes/postre5.jpeg" class="imgsGroup__item">      
-                            <img src="/imagenes/postre6.jpeg" class="imgsGroup__item"> 
+                            <button type="button" @click="click(4,3)"><img src="/imagenes/postre5.jpeg"  class="imgsGroup__item"></button>    
+                            <button type="button" @click="click(5,3)"><img src="/imagenes/postre6.jpeg"  class="imgsGroup__item"></button>
                         </div>
                      </div>
                     
                      <div>
-                        <img class="paginaMenu__itemGrande" id="paginaMenu__itemGrande">  
-                        <h2 class="paginaMenu__nombrePlatillo">{{nom}}</h2>  
-                        <p class="paginaMenu__descripcion">{{descripcion}}</p>
+                        <img class="itemIndividual__itemGrande" id="itemIndividual__itemGrande">  
+                        <h2 class="itemIndividual__nombrePlatillo">{{nom}}</h2>  
+                        <p class="itemIndividual__descripcion">{{descripcion}}</p>
                     </div>
                 </div>
                 <div class="flechas">

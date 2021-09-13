@@ -6,9 +6,7 @@ const pag = {
         pagina2: false,
         pagina3: false,
         itemGrande: "",
-        item:"",
-        sorc:"",
-        iterado: "",
+        imagen:"",
         nombre: "Sabor Gourmet",
         parrafo: "Lorem ipsum dolor sit...",
         msj: "Ver más...",
@@ -20,10 +18,7 @@ const pag = {
         descripciones2:['Batido grandioso de payaya licuada con leche, avena al gusto','Rompopé con la receta de la casa, con canela y licor al gusto','Refrescante refresco helado de tamarindo con tamarindo de excelente calidad','Excelente batido helado de banano, fresa en leche','Tradicional agua de sapo, con limón dulce de tapa y jengibre de gran frescura','Receta de la abuela, delicioso batido de piña y arroz cocinados, leche al gusto'],
         nombres3:['Torta Chilena','Cupcakes de Vainilla','Pastel de Vainilla','Arroz con Leche','Tamal de Maicena','Empanadas de Chiverré'],
         descripciones3:['Torta chilena con la receta original, rellena de dulce de leche','Esponjosos cupcakes de vainilla, decorador con crema chantilli','Pastel de vainilla con relleno de crema de mantequilla y lustre de limón','Receta de la casa, con especias aromáticas y los mejores ingredientes, para esa textura que tanto gusta','Exquisito tamal de maicena, con leche o leche agría a su gusto, coco al gusto','Emapanadas de chiverré, miel hecha en casa, receta tradicional']
-        
-        
-        
-    }
+     }
     },
     methods: {
         cambioMsj(){
@@ -41,10 +36,93 @@ const pag = {
             this.pagina1= true;
             
         },
-
+        click(_item,_numPag){
+            itemGrande = document.getElementById("itemIndividual__itemGrande");
+            
+            switch(_numPag){
+                case 1:
+                    this.nom=this.nombres1[_item];
+                    this.descripcion=this.descripciones1[_item];
+                    switch(_item){
+                        case 0:
+                            this.imagen="/imagenes/comida1.jpeg"
+                            break;
+                        case 1:
+                            this.imagen="/imagenes/comida2.jpeg"
+                            break;
+                        case 2:
+                            this.imagen="/imagenes/comida3.jpeg"
+                            break;
+                        case 3:
+                            this.imagen="/imagenes/comida4.jpeg"
+                            break;
+                        case 4:
+                            this.imagen="/imagenes/comida5.jpeg"
+                            break;
+                        case 5:
+                            this.imagen="/imagenes/comida6.jpeg"
+                            break;
+                    }
+                    itemGrande.setAttribute("src",this.imagen);
+                    break;
+                case 2:
+                    this.nom=this.nombres2[_item];
+                    this.descripcion=this.descripciones2[_item];
+                    switch(_item){
+                        case 0:
+                            this.imagen="/imagenes/refresco1.jpeg"
+                            break;
+                        case 1:
+                            this.imagen="/imagenes/refresco2.jpeg"
+                            break;
+                        case 2:
+                            this.imagen="/imagenes/refresco3.jpeg"
+                            break;
+                        case 3:
+                            this.imagen="/imagenes/refresco4.jpeg"
+                            break;
+                        case 4:
+                            this.imagen="/imagenes/refresco5.jpeg"
+                            break;
+                        case 5:
+                            this.imagen="/imagenes/refresco6.jpeg"
+                            break;
+                    }
+                    itemGrande.setAttribute("src",this.imagen);
+                    break;
+                    
+                case 3:
+                    this.nom=this.nombres3[_item];
+                    this.descripcion=this.descripciones3[_item];
+                    switch(_item){
+                        case 0:
+                            this.imagen="/imagenes/postre1.jpeg"
+                            break;
+                        case 1:
+                            this.imagen="/imagenes/postre2.jpeg"
+                            break;
+                        case 2:
+                            this.imagen="/imagenes/postre3.jpeg"
+                            break;
+                        case 3:
+                            this.imagen="/imagenes/postre4.jpeg"
+                            break;
+                        case 4:
+                            this.imagen="/imagenes/postre5.jpeg"
+                            break;
+                        case 5:
+                            this.imagen="/imagenes/postre6.jpeg"
+                            break;
+                    }
+                    itemGrande.setAttribute("src",this.imagen);
+                    break;
+            }
+        },
        
 
         cambioIzq(pagina){
+            this.nom="";
+            this.descripcion="";
             switch(pagina){
                 case 1:
                     this.pagina1=false;
@@ -53,6 +131,7 @@ const pag = {
                 case 2:
                     this.pagina2=false;
                     this.pagina1=true;
+                    
                     break;
                 case 3:
                     this.pagina3=false;
@@ -62,6 +141,8 @@ const pag = {
         },
 
         cambioDer(pagina){
+            this.nom="";
+            this.descripcion="";
             switch(pagina){
                 case 1:
                     this.pagina1=false;

@@ -1,7 +1,5 @@
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
     width: 100vw;
     height: 100vh;
 }
@@ -9,27 +7,49 @@ body{
 main{
     width: 90%;
     height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
     border: 7px solid blue;
     background-image: url(/imagenes/hamburger.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
-.paginaMenu{
-    
-    border: 7px solid blue;
-    width: 80vw;
-    height: 80vh;
-   
+.portada{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+
+.portada__parrafo{
+    font-size: 0.9rem;
+    
+}
+
+
+
+
+.paginaMenu__tituloMenu{
+    text-align: center;
+    color: white;
+    text-shadow: 4px 4px 8px teal;
+    font-size: 3rem;
+}
+
+.imgs,.itemIndividual{
+    width:50%;
+    height: 90%;
+  
+}
 .contenedor{
     display: flex;
+    width: 70vw;
     
 }
 .imgsGroup{
@@ -39,27 +59,32 @@ main{
 .flechas{
     margin: auto;
     width:fit-content;
+    display: flex;
 }
 .imgs{
     margin: 0 7px;
     border-right: 7px solid blue;
 }
 .imgsGroup__item{
-    width:100px;
+    width:25px;
     margin: 5px;
 }
-
+.itemIndividual__descripcion{
+    color:black;
+    text-shadow: 4px 4px 8px white;
+    background-color: wheat;
+}
+.itemIndividual__itemGrande{
+    width: 50px;
+}
 
 .portada__cabeza,.portada__parrafo{
     margin: auto;
 }
 
-.btnMsj{
-    margin: auto;
-}
+
 .flecha{
     display: block;
-    margin: 30px auto;
 }
 .flechaI,.flechaD,.flecha{
     border:0;
@@ -71,4 +96,41 @@ main{
 .flechaI:active,.flechaD:active.lecha:active{
     background-color: aqua;
     border-radius: 12px;
+}
+
+@media(min-width:500px) and (max-width:900px)
+{
+    .portada__cabeza{
+        font-size: 3rem;;
+    }
+    
+    .portada__parrafo{
+        font-size: 0.8rem;
+       
+    }
+
+    .imgsGroup__item{
+        width:50px;
+    }
+    .itemIndividual__itemGrande{
+        width: 100px;
+    }
+}
+
+@media(min-width:901px){
+
+    .portada__cabeza{
+        font-size: 6rem;;
+    }
+    
+    .portada__parrafo{
+        font-size: 2rem;
+       
+    }
+    .imgsGroup__item{
+        width:100px;
+    }
+    .itemIndividual__itemGrande{
+        width: 250px;
+    }
 }
