@@ -6,12 +6,13 @@ const pag = {
         pagina2: false,
         pagina3: false,
         itemGrande: "",
-        imagen:"",
         nombre: "Sabor Gourmet",
-        parrafo: "Lorem ipsum dolor sit...",
         msj: "Ver más...",
         nom:"",
         descripcion:"",
+        parrafo:"",
+        linea:"",
+        imagen:"",
         nombres1:['Empanada Arreglada','Chalupa','Pelota','Quesadilla','Hamburguesa','Nacho'],
         descripciones1:['Deliciosa empanada con carne mechada arreglada con repollo y salsas','Deliciosa chalupa con frijoles, carne, queso amarillo y chimichurrí','Deliciosa mezcla de carne mechada, queso mozarella en pan de hamburguesa','Deliciosa quesadilla con carne, queso mozarella y queso amarillo','Deliciosa hamburguesa especial de la casa con los más frescos ingedientes','Delicioso nacho con carne mechada, queso mozarella, salsa de queso, lechuga, chimichurrí y salsas'],
         nombres2:['Papaya en Leche','Rompopé','Tamarindo','Banano y Fresa','Agua de Sapo','Piña con Arroz'],
@@ -22,13 +23,17 @@ const pag = {
     },
     methods: {
         cambioMsj(){
+            parrafo = document.getElementById("portada__parrafo");
+            linea = document.getElementById("portada__linea");
             if (this.msj==="Ver más..."){
                 this.msj="Ver menos...";
-                this.parrafo= "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt ullam ducimus magnam consequuntur blanditiis sint quibusdam ipsa. Quia saepe sunt vitae. Inventore quibusdam impedit placeat consequuntur rerum repellendus sed mollitia laudantium sequi, quaerat fugit, nemo ducimus, consectetur distinctio officiis ullam quidem id quae. Repellat repellendus labore amet sequi est reprehenderit quia, vel cupiditate nemo atque possimus maxime, blanditiis obcaecati eaque!";
+                parrafo.setAttribute("class","portada__parrafo portada__parrafo--mostrar");
+                linea.setAttribute("class","portada__linea portada__linea--ocultar");
             }else{
                 this.msj="Ver más...";
                 this.parrafo="Lorem ipsum dolor, sit...";
-
+                parrafo.setAttribute("class","portada__parrafo");
+                linea.setAttribute("class","portada__linea");
             }
         },
         primerCambioPagina(){
@@ -38,54 +43,52 @@ const pag = {
         },
         click(_item,_numPag){
             itemGrande = document.getElementById("itemIndividual__itemGrande");
-            
             switch(_numPag){
                 case 1:
                     this.nom=this.nombres1[_item];
                     this.descripcion=this.descripciones1[_item];
                     switch(_item){
                         case 0:
-                            this.imagen="/imagenes/comida1.jpeg"
+                            this.imagen="/imagenes/comida1.jpeg";
                             break;
                         case 1:
-                            this.imagen="/imagenes/comida2.jpeg"
+                            this.imagen="/imagenes/comida2.jpeg";
                             break;
                         case 2:
-                            this.imagen="/imagenes/comida3.jpeg"
+                            this.imagen="/imagenes/comida3.jpeg";
                             break;
                         case 3:
-                            this.imagen="/imagenes/comida4.jpeg"
+                            this.imagen="/imagenes/comida4.jpeg";
                             break;
                         case 4:
-                            this.imagen="/imagenes/comida5.jpeg"
+                            this.imagen="/imagenes/comida5.jpeg";
                             break;
                         case 5:
-                            this.imagen="/imagenes/comida6.jpeg"
-                            break;
-                    }
-                    itemGrande.setAttribute("src",this.imagen);
+                            this.imagen="/imagenes/comida6.jpeg";
+                  }
+                  itemGrande.setAttribute("src",this.imagen);
                     break;
                 case 2:
                     this.nom=this.nombres2[_item];
                     this.descripcion=this.descripciones2[_item];
                     switch(_item){
                         case 0:
-                            this.imagen="/imagenes/refresco1.jpeg"
+                            this.imagen="/imagenes/refresco1.jpeg";
                             break;
                         case 1:
-                            this.imagen="/imagenes/refresco2.jpeg"
+                            this.imagen="/imagenes/refresco2.jpeg";
                             break;
                         case 2:
-                            this.imagen="/imagenes/refresco3.jpeg"
+                            this.imagen="/imagenes/refresco3.jpeg";
                             break;
                         case 3:
-                            this.imagen="/imagenes/refresco4.jpeg"
+                            this.imagen="/imagenes/refresco4.jpeg";
                             break;
                         case 4:
-                            this.imagen="/imagenes/refresco5.jpeg"
+                            this.imagen="/imagenes/refresco5.jpeg";
                             break;
                         case 5:
-                            this.imagen="/imagenes/refresco6.jpeg"
+                            this.imagen="/imagenes/refresco6.jpeg";
                             break;
                     }
                     itemGrande.setAttribute("src",this.imagen);
@@ -96,22 +99,22 @@ const pag = {
                     this.descripcion=this.descripciones3[_item];
                     switch(_item){
                         case 0:
-                            this.imagen="/imagenes/postre1.jpeg"
+                            this.imagen="/imagenes/postre1.jpeg";
                             break;
                         case 1:
-                            this.imagen="/imagenes/postre2.jpeg"
+                            this.imagen="/imagenes/postre2.jpeg";
                             break;
                         case 2:
-                            this.imagen="/imagenes/postre3.jpeg"
+                            this.imagen="/imagenes/postre3.jpeg";
                             break;
                         case 3:
-                            this.imagen="/imagenes/postre4.jpeg"
+                            this.imagen="/imagenes/postre4.jpeg";
                             break;
                         case 4:
-                            this.imagen="/imagenes/postre5.jpeg"
+                            this.imagen="/imagenes/postre5.jpeg";
                             break;
                         case 5:
-                            this.imagen="/imagenes/postre6.jpeg"
+                            this.imagen="/imagenes/postre6.jpeg";
                             break;
                     }
                     itemGrande.setAttribute("src",this.imagen);
@@ -157,9 +160,125 @@ const pag = {
                     this.portada=true;
                     break;
             }
+        },
+        pagin1(){
+            if(pagina1){
+                itemGrande = document.getElementById("itemIndividual__itemGrande");
+                for (let i = 0; i < 6; i++) {
+                    if(i===0){
+                        this.nom=this.nombres1[i];
+                        this.descripcion=this.descripciones1[i];
+                        this.imagen="/imagenes/comida1.jpeg";
+                        itemGrande.setAttribute("src",this.imagen);
+                    }else{
+                        setInterval(()=>{
+                            this.nom=this.nombres1[i];
+                            this.descripcion=this.descripciones1[i];
+                            switch(i){
+                                case 1:
+                                    this.imagen="/imagenes/comida2.jpeg";
+                                    break;
+                                case 2:
+                                    this.imagen="/imagenes/comida3.jpeg";
+                                    break;
+                                case 3:
+                                    this.imagen="/imagenes/comida4.jpeg";
+                                    break;
+                                case 4:
+                                    this.imagen="/imagenes/comida5.jpeg";
+                                    break;
+                                case 5:
+                                    this.imagen="/imagenes/comida6.jpeg";
+                                    break;
+                          }
+                          itemGrande.setAttribute("src",this.imagen);
+                        },10000);
+                    }
+                     
+                }
+            }
+
+        },
+        pagin2(){
+            if(pagina2){
+                itemGrande = document.getElementById("itemIndividual__itemGrande");
+                for (let i = 0; i < 6; i++) {
+                    if(i===0){
+                        this.nom=this.nombres2[i];
+                        this.descripcion=this.descripciones2[i];
+                        this.imagen="/imagenes/refresco1.jpeg";
+                        itemGrande.setAttribute("src",this.imagen);
+                    }else{
+                        setInterval(()=>{
+                            this.nom=this.nombres1[i];
+                            this.descripcion=this.descripciones1[i];
+                            switch(i){
+                                case 1:
+                                    this.imagen="/imagenes/refresco2.jpeg";
+                                    break;
+                                case 2:
+                                    this.imagen="/imagenes/refresco3.jpeg";
+                                    break;
+                                case 3:
+                                    this.imagen="/imagenes/refresco4.jpeg";
+                                    break;
+                                case 4:
+                                    this.imagen="/imagenes/refresco5.jpeg";
+                                    break;
+                                case 5:
+                                    this.imagen="/imagenes/refresco6.jpeg";
+                                    break;
+                          }
+                          itemGrande.setAttribute("src",this.imagen);
+                        },10000);
+                    }
+                     
+                }
+            }
+
+        },
+        pagin3(){
+            if(pagina3){
+                itemGrande = document.getElementById("itemIndividual__itemGrande");
+                for (let i = 0; i < 6; i++) {
+                    if(i===0){
+                        this.nom=this.nombres3[i];
+                        this.descripcion=this.descripciones3[i];
+                        this.imagen="/imagenes/postre1.jpeg";
+                        itemGrande.setAttribute("src",this.imagen);
+                    }else{
+                        setInterval(()=>{
+                            this.nom=this.nombres1[i];
+                            this.descripcion=this.descripciones1[i];
+                            switch(i){
+                                case 1:
+                                    this.imagen="/imagenes/postre2.jpeg";
+                                    break;
+                                case 2:
+                                    this.imagen="/imagenes/postre3.jpeg";
+                                    break;
+                                case 3:
+                                    this.imagen="/imagenes/postre4.jpeg";
+                                    break;
+                                case 4:
+                                    this.imagen="/imagenes/postre5.jpeg";
+                                    break;
+                                case 5:
+                                    this.imagen="/imagenes/postre6.jpeg";
+                                    break;
+                          }
+                          itemGrande.setAttribute("src",this.imagen);
+                        },10000);
+                    }
+                     
+                }
+            }
+
         }
 
+
     }
+    
     
 }
   Vue.createApp(pag).mount('#menu');

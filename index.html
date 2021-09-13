@@ -14,9 +14,10 @@
         <div id="menu"> 
             <div v-if="portada" id="pagina1" class="portada">
                 <h1 class="portada__cabeza" v-text="nombre"></h1>
-                <p class="portada__parrafo" v-text="parrafo"></p>
+                <p class="portada__linea" id="portada__linea">Lorem ipsum dolor sit...</p>
+                <p class="portada__parrafo" id="portada__parrafo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt ullam ducimus magnam consequuntur blanditiis sint quibusdam ipsa. Quia saepe sunt vitae. Inventore quibusdam impedit placeat consequuntur rerum repellendus sed mollitia laudantium sequi, quaerat fugit, nemo ducimus, consectetur distinctio officiis ullam quidem id quae. Repellat repellendus labore amet sequi est reprehenderit quia, vel cupiditate nemo atque possimus maxime, blanditiis obcaecati eaque!</p>
                 <button class="btnMsj" v-on:click="cambioMsj" type="button">{{msj}}</button>
-                <button class="flecha" type="button" v-on:click="primerCambioPagina"><img class="pagina1__flecha" src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></img></button>'
+                <button class="flecha" type="button" v-on:click="primerCambioPagina();pagin1();"><img class="pagina1__flecha" src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></img></button>
             </div>
 
             <div v-if="pagina1" class="paginaMenu">
@@ -46,7 +47,7 @@
                 </div>
                 <div class="flechas">
                     <button class="flechaI" @click="cambioIzq(1)" type="button"><img src="/imagenes/2024662_arrow_arrows_direction_left_icon.png"></button>
-                    <button class="flechaD" @click="cambioDer(1)" type="button"><img src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></button>
+                    <button class="flechaD" @click="cambioDer(1);pagin2();" type="button"><img src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></button>
                 </div>
             </div> 
             <div v-if="pagina2" class="paginaMenu">
@@ -75,8 +76,8 @@
                     </div>
                 </div>
                 <div class="flechas">
-                    <button class="flechaI" @click="cambioIzq(2)" type="button"><img src="/imagenes/2024662_arrow_arrows_direction_left_icon.png"></button>
-                    <button class="flechaD" @click="cambioDer(2)" type="button"><img src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></button>
+                    <button class="flechaI" @click="cambioIzq(2);pagin1();" type="button"><img src="/imagenes/2024662_arrow_arrows_direction_left_icon.png"></button>
+                    <button class="flechaD" @click="cambioDer(2);pagin3();" type="button"><img src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></button>
                 </div>
             </div> 
             <div v-if="pagina3" class="paginaMenu">
@@ -105,7 +106,7 @@
                     </div>
                 </div>
                 <div class="flechas">
-                    <button class="flechaI" @click="cambioIzq(3)" type="button"><img src="/imagenes/2024662_arrow_arrows_direction_left_icon.png"></button>
+                    <button class="flechaI" @click="cambioIzq(3);pagin2();" type="button"><img src="/imagenes/2024662_arrow_arrows_direction_left_icon.png"></button>
                     <button class="flechaD" @click="cambioDer(3)" type="button"><img src="/imagenes/2024661_arrow_arrows_direction_right_icon.png"></button>
                 </div>
             </div> 

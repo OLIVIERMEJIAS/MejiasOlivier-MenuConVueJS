@@ -25,13 +25,23 @@ main{
     justify-content: center;
     align-items: center;
 }
-
+.portada__linea{
+    display: unset;
+}
 
 .portada__parrafo{
     font-size: 0.9rem;
-    
+    text-align: justify;
+    display: none;
 }
 
+.portada__parrafo--mostrar{
+    display: unset;
+}
+
+.portada__linea--ocultar{
+    display: none;
+}
 
 
 
